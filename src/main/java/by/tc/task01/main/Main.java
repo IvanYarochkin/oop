@@ -1,5 +1,6 @@
 package by.tc.task01.main;
 
+import by.tc.task01.dao.writer.Writer;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
@@ -11,6 +12,7 @@ import static by.tc.task01.entity.criteria.SearchCriteria.TabletPC;
 public class Main {
 
     public static void main(String[] args) {
+        Writer.getInstance().write();
         Appliance appliance;
 
         ServiceFactory factory = ServiceFactory.getInstance();
@@ -18,14 +20,13 @@ public class Main {
 
         //////////////////////////////////////////////////////////////////
 
-        Criteria<Oven> criteriaOven = new Criteria<Oven>();
+        Criteria<Oven> criteriaOven = new Criteria();
         criteriaOven.setApplianceType("Oven");
-        criteriaOven.add(Oven.CAPACITY, 3);
+        criteriaOven.add(Oven.CAPACITY, 32);
 
         appliance = service.find(criteriaOven);
 
-        if ( appliance.getClass() == by.tc.task01.entity.Oven.class ) {
-        }
+
         by.tc.task01.entity.Oven oven = (by.tc.task01.entity.Oven) appliance;
         //if(oven.getCapacity() == 3) {}
 
