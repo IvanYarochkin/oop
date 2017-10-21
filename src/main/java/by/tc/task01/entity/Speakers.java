@@ -82,7 +82,7 @@ public class Speakers extends Appliance {
         return "Speakers : " +
                 "POWER_CONSUMPTION=" + powerConsumption +
                 ", NUMBER_OF_SPEAKERS=" + numberOfSpeakers +
-                ", FREQUENCY_RANGE='" + frequencyRange + '\'' +
+                ", FREQUENCY_RANGE=" + frequencyRange +
                 ", CORD_LENGTH=" + cordLength +
                 ';';
     }

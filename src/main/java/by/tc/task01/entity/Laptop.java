@@ -113,7 +113,7 @@ public class Laptop extends Appliance {
     public String toString() {
         return "Laptop : " +
                 "BATTERY_CAPACITY=" + batteryCapacity +
-                ", OS='" + os + '\'' +
+                ", OS=" + os +
                 ", MEMORY_ROM=" + memoryRom +
                 ", SYSTEM_MEMORY=" + systemMemory +
                 ", CPU=" + cpu +

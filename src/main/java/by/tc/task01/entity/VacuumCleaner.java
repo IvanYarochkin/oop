@@ -109,9 +109,9 @@ public class VacuumCleaner extends Appliance {
     public String toString() {
         return "VacuumCleaner : " +
                 "POWER_CONSUMPTION=" + powerConsumption +
-                ", FILTER_TYPE='" + filterType + '\'' +
-                ", BAG_TYPE='" + bagType + '\'' +
-                ", WAND_TYPE='" + wandType + '\'' +
+                ", FILTER_TYPE=" + filterType +
+                ", BAG_TYPE=" + bagType +
+                ", WAND_TYPE=" + wandType +
                 ", MOTOR_SPEED_REGULATION=" + motorSpeedRegulation +
                 ", CLEANING_WIDTH=" + cleaningWidth +
                 ';';

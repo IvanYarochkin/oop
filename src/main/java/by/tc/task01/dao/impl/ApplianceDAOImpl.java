@@ -12,6 +12,3 @@ public class ApplianceDAOImpl implements ApplianceDAO {
         return null;
     }
 }
-
-
-//you may add your own new classes
