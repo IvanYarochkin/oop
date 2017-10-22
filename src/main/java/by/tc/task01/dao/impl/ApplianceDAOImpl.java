@@ -16,9 +16,10 @@ public class ApplianceDAOImpl implements ApplianceDAO {
     public <E> Appliance find(Criteria<E> criteria) {
         List<String> lines = Reader.getInstance().readFromFile();
 
-        for (Map.Entry<E, Object> e : criteria.getCriteria().entrySet()) {
+        for (Map.Entry<E, Object> element : criteria.getCriteria().entrySet()) {
             lines = lines.stream()
-                    .filter(line -> line.contains(e.getKey() + "=" + e.getValue())
+                    .filter(line -> (line.contains(element.getKey() + "=" + element.getValue() + ",")
+                            || line.contains(element.getKey() + "=" + element.getValue() + ";"))
                             && line.contains(criteria.getApplianceType()))
                     .collect(Collectors.toList());
         }

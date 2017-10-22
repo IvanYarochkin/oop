@@ -1,5 +1,6 @@
 package by.tc.task01.dao.reader;
 
+import by.tc.task01.dao.writer.Writer;
 import org.apache.logging.log4j.util.Strings;
 
 import java.io.IOException;
@@ -30,6 +31,8 @@ public class Reader {
     }
 
     public List<String> readFromFile() {
+        Writer.getInstance().write();
+
         List<String> lines = new ArrayList<>();
         try {
             lines = Files.lines(Paths.get(FILE_PATH))
@@ -38,6 +41,9 @@ public class Reader {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        Writer.getInstance().deleteFile();
+
         return lines;
     }
 }

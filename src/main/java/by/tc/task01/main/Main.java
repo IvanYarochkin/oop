@@ -36,7 +36,7 @@ public class Main {
 
         criteriaOven = new Criteria<Oven>();
         criteriaOven.add(Oven.HEIGHT, 200);
-        criteriaOven.add(Oven.DEPTH, 300);
+        criteriaOven.add(Oven.DEPTH, -300);
 
         appliance = service.find(criteriaOven);
 
@@ -44,14 +44,17 @@ public class Main {
 
         //////////////////////////////////////////////////////////////////
 
-        Criteria<TabletPC> criteriaTabletPC = new Criteria<TabletPC>();
+        Criteria<TabletPC> criteriaTabletPC = new Criteria();
+        criteriaTabletPC.setApplianceType("TabletPC");
         criteriaTabletPC.add(TabletPC.COLOR, "BLUE");
         criteriaTabletPC.add(TabletPC.DISPLAY_INCHES, 14);
         criteriaTabletPC.add(TabletPC.MEMORY_ROM, 4);
 
-        appliance = service.find(criteriaOven);
+        appliance = service.find(criteriaTabletPC);
 
         PrintApplianceInfo.print(appliance);
+
+        Writer.getInstance().deleteFile();
 
     }
 

@@ -57,4 +57,12 @@ public class Writer {
             e.printStackTrace();
         }
     }
+
+    public void deleteFile() {
+        try {
+            Files.delete(Paths.get(Reader.getInstance().getFilePath()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

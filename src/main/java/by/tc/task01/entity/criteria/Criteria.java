@@ -13,6 +13,22 @@ public class Criteria<E> {
         criteria.put(searchCriteria, value);
     }
 
+    public void add(E searchCriteria, Double value) {
+        if ( value == value.intValue() ) {
+            criteria.put(searchCriteria, value.intValue());
+        } else {
+            criteria.put(searchCriteria, value);
+        }
+    }
+
+    public void add(E searchCriteria, Float value) {
+        if ( value == value.intValue() ) {
+            criteria.put(searchCriteria, value.intValue());
+        } else {
+            criteria.put(searchCriteria, value);
+        }
+    }
+
     public String getApplianceType() {
         return applianceType;
     }
@@ -24,5 +40,4 @@ public class Criteria<E> {
     public Map<E, Object> getCriteria() {
         return criteria;
     }
-
 }
