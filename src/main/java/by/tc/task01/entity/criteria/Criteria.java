@@ -4,10 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Criteria<E> {
-
+        // TODO: 22.10.2017 Set appliance type automatically if it's necessary
     private String applianceType;
 
     private Map<E, Object> criteria = new HashMap<E, Object>();
+
+    public Criteria(){
+        applianceType = "";
+    }
 
     public void add(E searchCriteria, Object value) {
         criteria.put(searchCriteria, value);

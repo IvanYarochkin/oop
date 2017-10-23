@@ -5,9 +5,11 @@ import by.tc.task01.entity.Appliance;
 public class PrintApplianceInfo {
 
     public static void print(Appliance appliance) {
-        System.out.println(appliance);
+        if ( appliance == null ){
+            System.out.println("Appliance wasn't found.");
+        } else {
+            System.out.println("Find:");
+            System.out.println(appliance);
+        }
     }
-
-    // you may add your own code here
-
 }

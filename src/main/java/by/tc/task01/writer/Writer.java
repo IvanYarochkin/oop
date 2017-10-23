@@ -1,6 +1,6 @@
-package by.tc.task01.dao.writer;
+package by.tc.task01.writer;
 
-import by.tc.task01.dao.reader.Reader;
+import by.tc.task01.reader.Reader;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

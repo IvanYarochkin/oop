@@ -1,4 +1,4 @@
-package by.tc.task01.dao.parser;
+package by.tc.task01.parser;
 
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.Laptop;
@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public final class LineParser {
 
-    private static final Pattern VALUE_PATTERN = Pattern.compile("(?<==)((-)|(\\d{1,7}.?\\d{0,7})|\\w)+(?=,|;)");
+    private static final Pattern VALUE_PATTERN = Pattern.compile("(?<==)((-)|\\d{1,7}(\\.\\d{1,7})?|\\w)+(?=,|;)");
 
     private LineParser() {
     }
@@ -42,7 +42,6 @@ public final class LineParser {
             case "Oven": {
                 return new Oven(Integer.parseInt(values.get(0)), Integer.parseInt(values.get(1)), Integer.parseInt(values.get(2))
                         , Integer.parseInt(values.get(3)), Double.parseDouble(values.get(4)), Double.parseDouble(values.get(5)));
-
             }
             case "Refrigerator": {
                 return new Refrigerator(Integer.parseInt(values.get(0)), Integer.parseInt(values.get(1)), Integer.parseInt(values.get(2))

@@ -1,10 +1,10 @@
 package by.tc.task01.main;
 
-import by.tc.task01.dao.writer.Writer;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.ServiceFactory;
+import by.tc.task01.writer.Writer;
 
 import static by.tc.task01.entity.criteria.SearchCriteria.Oven;
 import static by.tc.task01.entity.criteria.SearchCriteria.TabletPC;

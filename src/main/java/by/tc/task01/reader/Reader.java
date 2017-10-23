@@ -1,6 +1,6 @@
-package by.tc.task01.dao.reader;
+package by.tc.task01.reader;
 
-import by.tc.task01.dao.writer.Writer;
+import by.tc.task01.writer.Writer;
 import org.apache.logging.log4j.util.Strings;
 
 import java.io.IOException;
@@ -9,7 +9,6 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
-
 
 public class Reader {
 

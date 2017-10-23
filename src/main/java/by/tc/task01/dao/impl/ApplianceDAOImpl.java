@@ -1,10 +1,10 @@
 package by.tc.task01.dao.impl;
 
 import by.tc.task01.dao.ApplianceDAO;
-import by.tc.task01.dao.parser.LineParser;
-import by.tc.task01.dao.reader.Reader;
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.parser.LineParser;
+import by.tc.task01.reader.Reader;
 
 import java.util.List;
 import java.util.Map;
