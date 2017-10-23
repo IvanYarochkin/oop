@@ -2,15 +2,15 @@ package by.tc.task01.service.validation;
 
 import by.tc.task01.entity.criteria.Criteria;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Validator {
 
-    private static final List<String> doubleList = new ArrayList<>();
-    private static final List<String> integerList = new ArrayList<>();
-    private static final List<String> stringList = new ArrayList<>();
+    private static final Set<String> doubleList = new HashSet<>();
+    private static final Set<String> integerList = new HashSet<>();
+    private static final Set<String> stringList = new HashSet<>();
 
     static {
         stringList.add("FREQUENCY_RANGE");

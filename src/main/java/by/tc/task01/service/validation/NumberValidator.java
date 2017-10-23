@@ -1,6 +1,10 @@
 package by.tc.task01.service.validation;
 
-public class NumberValidator {
+public final class NumberValidator {
+
+    public NumberValidator() {
+
+    }
 
     public static boolean doubleValidate(Object value) {
         if ( !(value instanceof Number) ) {

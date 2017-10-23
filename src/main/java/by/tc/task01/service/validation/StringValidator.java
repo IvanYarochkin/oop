@@ -3,9 +3,13 @@ package by.tc.task01.service.validation;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class StringValidator {
+public final class StringValidator {
 
     private static final Pattern RANGE_PATTERN = Pattern.compile("\\d{1,7}(\\.\\d{1,7})?(-\\d{1,7}(\\.\\d{1,7})?)?");
+
+    private StringValidator() {
+
+    }
 
     public static boolean validate(String key, Object value) {
         if ( !(value instanceof String || value instanceof Character) ) {

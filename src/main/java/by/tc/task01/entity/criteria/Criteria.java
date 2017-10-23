@@ -4,13 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Criteria<E> {
-        // TODO: 22.10.2017 Set appliance type automatically if it's necessary
     private String applianceType;
 
     private Map<E, Object> criteria = new HashMap<E, Object>();
 
-    public Criteria(){
+    public Criteria() {
         applianceType = "";
+    }
+
+    public Map<E, Object> getCriteria() {
+        return criteria;
     }
 
     public void add(E searchCriteria, Object value) {
@@ -39,9 +42,5 @@ public class Criteria<E> {
 
     public void setApplianceType(String applianceType) {
         this.applianceType = applianceType;
-    }
-
-    public Map<E, Object> getCriteria() {
-        return criteria;
     }
 }

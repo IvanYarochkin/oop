@@ -14,13 +14,13 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
     @Override
     public <E> Appliance find(Criteria<E> criteria) {
-        List<String> lines = Reader.getInstance().readFromFile();
+        List<String> lines = Reader.readFromFile();
 
         for (Map.Entry<E, Object> element : criteria.getCriteria().entrySet()) {
             lines = lines.stream()
-                    .filter(line -> (line.contains(element.getKey() + "=" + element.getValue() + ",")
-                            || line.contains(element.getKey() + "=" + element.getValue() + ";"))
-                            && line.contains(criteria.getApplianceType()))
+                    .filter(line -> (line.toUpperCase().contains(element.getKey().toString().toUpperCase() + "=" + element.getValue().toString().toUpperCase() + ",")
+                            || line.toUpperCase().contains(element.getKey().toString().toUpperCase() + "=" + element.getValue().toString().toUpperCase() + ";"))
+                            && line.toUpperCase().contains(criteria.getApplianceType().toUpperCase()))
                     .collect(Collectors.toList());
         }
 

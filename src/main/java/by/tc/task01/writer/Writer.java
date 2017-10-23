@@ -1,37 +1,21 @@
 package by.tc.task01.writer;
 
-import by.tc.task01.reader.Reader;
+import by.tc.task01.filehelper.FileHelper;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class Writer {
+public final class Writer {
 
     private Writer() {
+
     }
 
-    private static class SingletonHolder {
-        private static final Writer INSTANCE = new Writer();
-    }
-
-    public static Writer getInstance() {
-        return Writer.SingletonHolder.INSTANCE;
-    }
-
-    public void write() {
-        Path filePath = Paths.get(Reader.getInstance().getFilePath());
-
-        if ( Files.notExists(filePath) ) {
-            try {
-                Files.createFile(filePath);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+    public static void writeDataToFile() {
+        Path filePath = Paths.get(FileHelper.getFilePath());
 
         try (FileWriter fileWriter = new FileWriter(filePath.toFile());
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
@@ -53,14 +37,6 @@ public class Writer {
                     "Speakers : POWER_CONSUMPTION=15, NUMBER_OF_SPEAKERS=2, FREQUENCY_RANGE=2-4, CORD_LENGTH=2;\n" +
                     "Speakers : POWER_CONSUMPTION=20, NUMBER_OF_SPEAKERS=3, FREQUENCY_RANGE=3-4, CORD_LENGTH=3;\n" +
                     "Speakers : POWER_CONSUMPTION=17, NUMBER_OF_SPEAKERS=4, FREQUENCY_RANGE=2-3.5, CORD_LENGTH=4;\n");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void deleteFile() {
-        try {
-            Files.delete(Paths.get(Reader.getInstance().getFilePath()));
         } catch (IOException e) {
             e.printStackTrace();
         }
