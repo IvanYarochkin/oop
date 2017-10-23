@@ -83,5 +83,12 @@ public class Main {
 
         appliance = service.find(criteriaTabletPC);
         PrintApplianceInfo.print(appliance);
+
+        Criteria<TabletPC> emptyCriteria = new Criteria();
+        emptyCriteria.setApplianceType("TabletPC");
+
+        appliance = service.find(emptyCriteria);
+        PrintApplianceInfo.print(appliance);
+
     }
 }

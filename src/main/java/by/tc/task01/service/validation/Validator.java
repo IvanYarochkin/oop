@@ -42,7 +42,8 @@ public class Validator {
 
     public static <E> boolean criteriaValidator(Criteria<E> criteria) {
 
-        if ( criteria == null || criteria.getCriteria().containsKey(null) || criteria.getCriteria().containsValue(null) ) {
+        if ( criteria == null || criteria.getCriteria().containsKey(null) || criteria.getCriteria().containsValue(null)
+                || criteria.getCriteria().isEmpty() ) {
             return false;
         }
 
